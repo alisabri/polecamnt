@@ -1,0 +1,9 @@
+<StackLayout>
+    <ActionBar title="PoleCam" class="action-bar" ></ActionBar>
+    <Image src="res://ibclaus" stretch="none" horizontalAlignment="center"></Image>        
+    <TextField hint="Username" keyboardType="email" [(ngModel)]="user.username"
+        autocorrect="false" autocapitalizationType="none"></TextField>
+    <TextField hint="Password" secure="true" [(ngModel)]="user.password"></TextField>
+
+    <Button text="Login" class="submit-button" (tap)="login()"></Button>
+</StackLayout>
