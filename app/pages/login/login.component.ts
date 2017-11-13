@@ -6,7 +6,7 @@ import { UserService } from "../../shared/user/user.service";
 import * as Toast from "nativescript-toast";
 
 @Component({
-  selector: "my-app",
+  selector: "login",
   moduleId: module.id,
   providers: [UserService],
   templateUrl: "login.html",
@@ -30,7 +30,7 @@ export class LoginComponent {
   login() {
     this.userService.login(this.user)
                     .subscribe(
-                        () => this.nav.navigate(["/home"], { clearHistory: true }),
+                        () => this.nav.navigate(["/tabs"], { clearHistory: true }),
                         (error) =>  Toast.makeText(error.json().message).show()
                     );
   }

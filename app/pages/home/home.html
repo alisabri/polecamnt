@@ -1,4 +1,14 @@
-<StackLayout>
-    <ActionBar title="PoleCam" class="action-bar" ></ActionBar>
-    <Label text="Hello world"></Label>
-</StackLayout>
+<RadDataForm id="homeForm" [source]="info" [isReadOnly]="isRunning">
+    <TKEntityProperty tkDataFormProperty name="projectName" displayName="Project Name:" index="0">
+        <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+    </TKEntityProperty>
+    <TKEntityProperty tkDataFormProperty name="station" displayName="Station:" index="1">
+    </TKEntityProperty>        
+    <TKEntityProperty tkDataFormProperty name="diskUsage" displayName="Disk Usage:" index="2">
+        <TKPropertyEditor tkEntityPropertyEditor type="Label"></TKPropertyEditor>
+    </TKEntityProperty>        
+    <TKEntityProperty tkDataFormProperty name="batteryUsage" displayName="Battery Usage:" index="3">
+        <TKPropertyEditor tkEntityPropertyEditor type="Label"></TKPropertyEditor>
+    </TKEntityProperty>  
+</RadDataForm>
+

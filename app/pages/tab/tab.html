@@ -1,0 +1,10 @@
+<GridLayout rows="*, auto">
+        <StackLayout row="0" orientation="vertical">
+            <ActionBar title="PoleCam" class="action-bar" ></ActionBar>
+            <StackLayout> 
+                <router-outlet></router-outlet>
+            </StackLayout>
+        </StackLayout>
+        <BottomBar row="1" [items]="items" [hide]="hidden" (loaded)="tabLoaded($event)" (tabSelected)="tabSelected($event)" [inactiveColor]="inactiveColor" 
+            [accentColor]="accentColor" colored="true"></BottomBar>
+</GridLayout>

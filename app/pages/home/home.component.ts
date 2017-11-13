@@ -1,22 +1,33 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { RouterExtensions, PageRoute } from "nativescript-angular/router";
+//import {RadDataForm, EntityProperty} from "nativescript-pro-ui/dataform";
+import { Info, Project } from "../../shared/project/project";
+import { ProjectService } from "../../shared/project/project.service";
 
-import { User } from "../../shared/user/user";
-import { UserService } from "../../shared/user/user.service";
-import * as Toast from "nativescript-toast";
 
 @Component({
-  selector: "status",
-  moduleId: module.id,
-  providers: [UserService],
-  templateUrl: "home.html",
-  styleUrls: ["../../app.css"]
+    selector: "home",
+    moduleId: module.id,
+    templateUrl: "home.html",
+    styleUrls: ["../../app.css"]
 })
-
+  
 export class HomeComponent {
 
-  constructor(private router: Router, private userService: UserService) {
-      console.log("starting sstatus page");
-  }
-  
+    info: Info;
+    isRunning:boolean;
+
+    constructor(private nav: RouterExtensions, private projectService:ProjectService) {
+        this.info = this.projectService.project.info;
+        this.isRunning = this.projectService.project.isRunning;
+        console.log('HomeComponent Constructor', this.isRunning);
+    }
+
+    pageLoaded(event) {
+        console.log("page Loaded home");
+    }
+
+    onTap() {
+
+    }
 }
